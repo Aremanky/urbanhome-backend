@@ -1,2 +1,6 @@
 node_modules/
 .env
+PORT=3000
+DATABASE_URL=postgres://postgres:Sarafea2020@localhost:5432/urbanhome
+JWT_SECRET=un_secreto_muy_seguro
+GOOGLE_MAPS_KEY=tu_api_key_google
