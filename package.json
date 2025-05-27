@@ -1,0 +1,28 @@
+{
+  "name": "urbanhome-backend",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000u\u0000r\u0000b\u0000a\u0000n\u0000h\u0000o\u0000m\u0000e\u0000-\u0000b\u0000a\u0000c\u0000k\u0000e\u0000n\u0000d\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aremanky/urbanhome-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aremanky/urbanhome-backend/issues"
+  },
+  "homepage": "https://github.com/Aremanky/urbanhome-backend#readme",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.16.0",
+    "sequelize": "^6.37.7"
+  }
+}
