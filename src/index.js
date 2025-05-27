@@ -11,7 +11,7 @@ app.use(express.json());
 
 // Montar rutas
 app.use('/api/inmuebles', inmuebleRoutes);
-app.use('/api/auth', authRoutes);
+
 
 // Prueba de conexión y arranque
 sequelize.authenticate()
