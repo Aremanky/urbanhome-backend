@@ -3,6 +3,7 @@ const sequelize = require('./config/db');
 require('dotenv').config();
 
 const inmuebleRoutes = require('./routes/inmueble');
+const authRoutes = require('./routes/auth');
 // TODO: agregar authRoutes cuando esté implementado
 
 const app = express();
@@ -10,6 +11,7 @@ app.use(express.json());
 
 // Montar rutas
 app.use('/api/inmuebles', inmuebleRoutes);
+app.use('/api/auth', authRoutes);
 
 // Prueba de conexión y arranque
 sequelize.authenticate()
