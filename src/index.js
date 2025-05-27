@@ -2,23 +2,25 @@ const express = require('express');
 const sequelize = require('./config/db');
 require('dotenv').config();
 
+const inmuebleRoutes = require('./routes/inmueble');
+// TODO: agregar authRoutes cuando esté implementado
+
 const app = express();
-const PORT = process.env.PORT || 3000;
+app.use(express.json());
 
-// Intentamos conectar a la base de datos
+// Montar rutas
+app.use('/api/inmuebles', inmuebleRoutes);
+
+// Prueba de conexión y arranque
 sequelize.authenticate()
+  .then(() => sequelize.sync())
   .then(() => {
-    console.log('✅ Conexión a la base de datos establecida');
-
-    app.get('/', (req, res) => {
-      res.send('¡Servidor URBANHOME y base de datos OK! 🚀');
-    });
-
-    app.listen(PORT, () => {
-      console.log(`Servidor arrancado en http://localhost:${PORT}`);
+    console.log('✅ DB OK, modelos sincronizados');
+    app.listen(process.env.PORT || 3000, () => {
+      console.log(`Servidor en http://localhost:${process.env.PORT || 3000}`);
     });
   })
   .catch(err => {
-    console.error('❌ No se pudo conectar a la base de datos:', err);
+    console.error('Error al iniciar la app:', err);
     process.exit(1);
   });
