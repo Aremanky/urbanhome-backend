@@ -1,0 +1,88 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inmuebles",
+  "info": {
+    "singularName": "inmueble",
+    "pluralName": "inmuebles",
+    "displayName": "Inmueble"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "default": "Sin nombre",
+      "required": false,
+      "unique": true
+    },
+    "direccion": {
+      "type": "string",
+      "required": true
+    },
+    "geo_lat": {
+      "type": "decimal"
+    },
+    "geo_lng": {
+      "type": "decimal"
+    },
+    "precio": {
+      "type": "decimal",
+      "required": true
+    },
+    "tipo": {
+      "type": "enumeration",
+      "default": "alquiler",
+      "enum": [
+        "venta",
+        "alquiler"
+      ]
+    },
+    "metros": {
+      "type": "decimal",
+      "required": true
+    },
+    "media": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "banos": {
+      "type": "integer"
+    },
+    "habitaciones": {
+      "type": "integer"
+    },
+    "garaje": {
+      "type": "boolean",
+      "default": false
+    },
+    "terraza": {
+      "type": "boolean",
+      "default": false
+    },
+    "fecha": {
+      "type": "date"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "titulo"
+    },
+    "descripcion": {
+      "type": "text"
+    },
+    "barrio": {
+      "type": "string"
+    },
+    "seo_title": {
+      "type": "string"
+    },
+    "seo_description": {
+      "type": "text"
+    }
+  }
+}
